@@ -1,0 +1,28 @@
+{
+  "name": "angular-flex-form",
+  "version": "0.0.1",
+  "authors": [
+    "Qiaonan <geonann@gmail.com>"
+  ],
+  "description": "Form with flexible fields",
+  "main": "flex-form.js",
+  "keywords": [
+    "form",
+    "flex",
+    "flexible",
+    "angular"
+  ],
+  "dependencies": {
+        "angular": "latest",
+        "font-awesome":"latest"
+  },
+  "license": "MIT",
+  "homepage": "http://frlender.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,40 @@
+.ff-holder{
+	display: table;
+}
+
+.ff-holder input{
+	border-width:0;
+	border-bottom-width:thin;
+	 border-color: rgb(203, 196, 196);
+}
+
+.ff-key{
+	font-weight: bold;
+}
+
+.ff-button{
+	font-size:18px;
+	color:gray;
+	cursor:pointer;
+}
+
+.ff-button:hover{
+	color:black;
+}
+
+.ff-button-holder{
+	min-width:25px;
+}
+
+.ff-row{
+	height:25px;
+}
+
+.ff-holder td{
+	padding:0;
+}
+
+.ff-table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}

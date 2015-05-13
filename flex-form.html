@@ -1,0 +1,15 @@
+<div class="ff-holder">
+   	<table class="ff-table">
+   		<tbody>
+   			<tr class="ff-row" ng-repeat="item in data" ng-mouseover="item._mouseover=true" ng-mouseleave="item._mouseover=false">
+   				<td class="ff-key"> <input value="{{item.key}}"></td>
+   				<td> <input value="{{item.value}}" placeholder="{{placeholder}}"></td>
+   				<td class="ff-button-holder">
+   					<a class="ff-button" ng-style="{display:(item._mouseover&&data.length>1?'block':'none')}" ng-click="removeMetaItem($index)">
+   						<i class="fa fa-minus-circle"></i>
+   					</a>
+   			</tr>
+   		</tbody>
+   	</table>
+   	<a class="ff-button ff-button-plus" ng-click="addMetaItem()"><i class="fa fa-plus"></i></a>
+</div>
