@@ -41,4 +41,14 @@ angular.module('flexForm',[])
       });
       return res;
    }
+})
+.service('ffCollapse',function(){
+   //collapse an object into an array in the format of data
+   return function(obj){
+      var data = [];
+      for(key in obj){
+         data.push({key:key,data:obj[key]});
+      }
+      return data;
+   }
 });
