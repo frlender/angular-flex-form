@@ -12,15 +12,15 @@
 
     var ff = angular.module('flexFormApp',["flexForm"]);
 
-   ff.controller('indexCtrl', function($scope) {
+   ff.controller('indexCtrl', function($scope,ffBuild) {
        	$scope.inputMeta = [
-			{key:"Tag",value:""},
-       		{key:"Cell", value:"No data"},
-       		{key:"Perturbation", value:"No data"},
-       		{key:"Gene", value:"No data"}
+			{key:"Tag",value:"",dataPlaceholder:"desc"},
+       		{key:"Cell", value:""},
+       		{key:"Perturbation", value:""},
+       		{key:"Gene", value:""}
        	];
        	$scope.print = function(){
-       		console.log($scope.inputMeta);
+       		console.log(ffBuild($scope.inputMeta));
        	}
   	});
 

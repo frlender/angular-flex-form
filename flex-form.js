@@ -4,15 +4,19 @@ var __currentScriptPath = __scripts[__scripts.length-1].src;
 angular.module('flexForm',[])
 .directive('flexForm',function(){
    	var ctrl = ['$scope',function($scope){
+
+         if($scope.data==undefined || $scope.data.constructor != Array || $scope.data.length==0){
+            $scope.data = [
+               {key:"",data:"",keyPlaceholder:"No key", dataPlaceholder:"No data"}
+            ];
+         }
    		$scope.data.forEach(function(e){
-   			if(!("_mouseover" in e)){
    				e._mouseover = false;
-   			}
    		});
-   		$scope.addMetaItem = function(){
-			$scope.data.push({key:"No key",value:"No data",_mouseover:false});	
+   	$scope.addItem = function(){
+			$scope.data.push({key:"",data:"",_mouseover:false});	
 		}
-		$scope.removeMetaItem = function(index){
+		$scope.removeItem = function(index){
 			$scope.data.splice(index,1);
 		}
    	}];
@@ -26,3 +30,15 @@ angular.module('flexForm',[])
         + 'flex-form.html'
    	};
 })
+.service('ffBuild',function(){
+   // build data into one single object
+   return function(data){
+      var res = {};
+      data.forEach(function(e){
+         if(e.key&&e.value){
+            res[e.key] = e.value;
+         }
+      });
+      return res;
+   }
+});
