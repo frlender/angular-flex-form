@@ -2,14 +2,14 @@
    	<table class="ff-table">
    		<tbody>
    			<tr class="ff-row" ng-repeat="item in data" ng-mouseover="item._mouseover=true" ng-mouseleave="item._mouseover=false">
-   				<td> <input class="ff-key" ng-model="item.key" placeholder="{{item.keyPlaceHolder?item.keyPlaceholder:'No key'}}"></td>
-   				<td> <input ng-model="item.value" placeholder="{{item.dataPlaceholder?item.dataPlaceholder:'No data'}}"></td>
-   				<td class="ff-button-holder">
+   				<td> <input class="ff-key" ng-model="item.key" placeholder="{{item.keyPlaceHolder?item.keyPlaceholder:'No key'}}" ng-disabled="static"></td>
+   				<td> <input ng-model="item.value" placeholder="{{item.dataPlaceholder?item.dataPlaceholder:'No data'}}" ng-disabled="static"></td>
+   				<td class="ff-button-holder" ng-if="!static">
    					<a class="ff-button" ng-style="{display:(item._mouseover&&data.length>1?'block':'none')}" ng-click="removeItem($index)">
    						<i class="fa fa-minus-circle"></i>
    					</a>
    			</tr>
    		</tbody>
    	</table>
-   	<a class="ff-button ff-button-plus" ng-click="addItem()"><i class="fa fa-plus"></i></a>
+   	<a ng-if="!static" class="ff-button ff-button-plus" ng-click="addItem()"><i class="fa fa-plus"></i></a>
 </div>

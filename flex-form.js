@@ -4,11 +4,16 @@ var __currentScriptPath = __scripts[__scripts.length-1].src;
 angular.module('flexForm',[])
 .directive('flexForm',function(){
    	var ctrl = ['$scope',function($scope){
-
+         console.log($scope.static,$scope.data);
          if($scope.data==undefined || $scope.data.constructor != Array || $scope.data.length==0){
             $scope.data = [
                {key:"",data:"",keyPlaceholder:"No key", dataPlaceholder:"No data"}
             ];
+         }
+         if($scope.static==undefined || $scope.static!="true"){
+            $scope.static = false;
+         }else{
+            $scope.static = true;
          }
    		$scope.data.forEach(function(e){
    				e._mouseover = false;
@@ -23,7 +28,8 @@ angular.module('flexForm',[])
    	return{
    		restrict: 'E',
    		scope: {
-   			data: '='
+   			data: '=',
+            static: '@'
    		},
    		controller: ctrl,
    		templateUrl: __currentScriptPath.substring(0, __currentScriptPath.lastIndexOf('/') + 1) 

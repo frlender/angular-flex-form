@@ -19,6 +19,11 @@
        		{key:"Perturbation", value:""},
        		{key:"Gene", value:""}
        	];
+          $scope.inputMeta2 = [
+          {key:"Tag",value:"ab"},
+          {key:"Cell", value:"cd"},
+          {key:"Perturbation", value:"ef"}
+        ];
        	$scope.print = function(){
        		console.log(ffBuild($scope.inputMeta));
        	}
@@ -29,6 +34,7 @@
 
 <body ng-controller="indexCtrl">
 <flex-form data="inputMeta"></flex-form>
+<flex-form static="true" data="inputMeta2"></flex-form>
 <button ng-click="print()">console.log</button>
 </body>
 	<script>
