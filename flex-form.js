@@ -60,6 +60,7 @@ angular.module('flexForm',[])
             var item = [];
             item.key = e.key;
             item.value = e.value;
+            res.push(item);
          }
       });
       return res;
