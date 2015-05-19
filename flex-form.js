@@ -51,4 +51,17 @@ angular.module('flexForm',[])
       }
       return data;
    }
+})
+.service('ffClean',function(){
+   return function(arr){
+      var res = [];
+      arr.forEach(function(e){
+         if(e.value){
+            var item = [];
+            item.key = e.key;
+            item.value = e.value;
+         }
+      });
+      return res;
+   }
 });
