@@ -11,7 +11,14 @@
 
 .ff-key{
 	font-weight: bold;
+	width:160px;
 }
+
+.ff-value{
+	/*for overwrite*/
+	width:190px;
+}
+
 
 .ff-button{
 	font-size:18px;
@@ -39,3 +46,4 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+

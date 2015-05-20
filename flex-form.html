@@ -3,7 +3,7 @@
    		<tbody>
    			<tr class="ff-row" ng-repeat="item in data" ng-mouseover="item._mouseover=true" ng-mouseleave="item._mouseover=false">
    				<td> <input class="ff-key" ng-model="item.key" placeholder="{{item.keyPlaceHolder?item.keyPlaceholder:'No key'}}" ng-disabled="static"></td>
-   				<td> <input ng-model="item.value" placeholder="{{item.dataPlaceholder?item.dataPlaceholder:'No data'}}" ng-disabled="static"></td>
+   				<td> <input class="ff-value" ng-model="item.value" placeholder="{{item.dataPlaceholder?item.dataPlaceholder:'No data'}}" ng-disabled="static"></td>
    				<td class="ff-button-holder" ng-if="!static">
    					<a class="ff-button" ng-style="{display:(item._mouseover&&data.length>1?'block':'none')}" ng-click="removeItem($index)">
    						<i class="fa fa-minus-circle"></i>
