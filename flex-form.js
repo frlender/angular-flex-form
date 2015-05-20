@@ -4,7 +4,7 @@ var __currentScriptPath = __scripts[__scripts.length-1].src;
 angular.module('flexForm',[])
 .directive('flexForm',function(){
    	var ctrl = ['$scope',function($scope){
-         console.log($scope.static,$scope.data);
+         // console.log($scope.static,$scope.data);
          if($scope.data==undefined || $scope.data.constructor != Array || $scope.data.length==0){
             $scope.data = [
                {key:"",data:"",keyPlaceholder:"No key", dataPlaceholder:"No data"}
